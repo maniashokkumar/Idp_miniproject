@@ -1,0 +1,23 @@
+<div class="articles">
+    <div>
+        <div class="cards" *ngFor="let info of all_Data; let i = index">
+            <div>
+                <img src="{{info.urlToImage}}" onerror="this.src='assets/Images/telsa.png'" width="300" height="250"
+                    class="img_align">
+            </div>
+            <div class="content">
+                <h2 class="title">{{info.title | slice:0:70 }}</h2>
+                <h3>{{info.description | slice:0:250}}</h3>
+                <h5>{{info.publishedAt | date:"HH:mm"}}</h5>
+
+                <button class="delbtn" (click)="delete(i)">Delete</button><br>
+                <!-- <a [routerLink]="['blogEdit',i]">Edit</a> -->
+                <a (click)="Edit(i)">Edit</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="clear">
+
+    </div>
+</div>>

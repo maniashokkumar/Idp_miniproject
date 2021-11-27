@@ -1,0 +1,32 @@
+<div class="articles">
+    <div>
+        <div class="cards" *ngFor="let info of all_Data; let i = index">
+            <div *ngIf="i<=4">
+                <img [routerLink]="['blog',i]" src="{{info.urlToImage}}" onerror="this.src='assets/Images/telsa.png'"
+                    width="300" height="250" class="img_align">
+            </div>
+            <div class="content" *ngIf="i<=4">
+                <h2 class="title" [routerLink]="['blog',i]" title="click for more details">{{info.title }}</h2>
+                <span *ngIf="info.description.length <= textlength">
+                    <h3>{{info.description}}</h3>
+                </span>
+                <span *ngIf="info.description.length > textlength && ! showMore">
+                    <h3> {{info.description.substring(0,textlength)}}...</h3> <span (click)="showMore = true"><a>Read
+                            More</a></span>
+                </span>
+                <span *ngIf="info.description.length > textlength &&  showMore">
+                    <h3> {{info.description}}</h3> <span (click)="showMore = false"><a>Read less</a></span>
+                </span>
+                <h5>{{info.publishedAt | date:"HH:mm"}}</h5>
+                <a class="delbtn" (click)="delete(i)">Delete</a><br>
+            </div>
+          
+
+        </div>
+        
+    </div>
+
+    <div class="clear">
+
+    </div>
+</div>
