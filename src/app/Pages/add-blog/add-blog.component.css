@@ -6,9 +6,19 @@
 }
 
 td{
-    width: 100px;
+    width: 300px;
+  
 }
 input{
-    width: 500px;
+    width: 100px;
     height: 40px;
+}
+.form-control{
+    height: 50px;
+    width: 600px;
+    overflow: scroll;
+    
+}
+button{
+    padding: 15px;
 }

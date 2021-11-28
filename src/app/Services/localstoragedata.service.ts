@@ -18,7 +18,7 @@ export class LocalstoragedataService {
         data.articles.sort((x: any) => {
           const a = new Date(x.publishedAt)
           const b = new Date()
-          return a === b ? 0 : a > b ? 1 : -1;
+          return a === b ? 0 : b > a ? -1 : 1;
 
 
         })
@@ -41,10 +41,18 @@ export class LocalstoragedataService {
 
   }
   deleteblog(i: number, all_Data: any) {
+    var result = confirm("Click Ok to Delete the Blog");
+    if (result) {
+      all_Data.splice(i, 1);
+      localStorage.setItem("data", JSON.stringify(all_Data));
+      alert("blog Deleted")
+    }
+    else {
+      alert("Action Cancelled")
+    }
 
-    all_Data.splice(i, 1);
-    localStorage.setItem("data", JSON.stringify(all_Data));
-    alert("blog Deleted")
+
+
   }
   specific(index: any) {
     let dataAsstring = localStorage.getItem("data");
@@ -63,6 +71,25 @@ export class LocalstoragedataService {
     }
 
 
+  }
+  submitBlogEdit(data: any, stringtoarr: any) {
+    if (this.editaction == -1) {
+      stringtoarr.push(data.value)
+      localStorage.setItem("data", JSON.stringify(stringtoarr));
+      alert("blogadded");
+    }
+    else {
+
+      stringtoarr[this.editaction].title = data.value.title;
+      console.log(stringtoarr[this.editaction].title);
+
+      localStorage.setItem("data", JSON.stringify(stringtoarr))
+      alert("Blog Edited Successfull");
+
+
+
+
+    }
   }
 
 }

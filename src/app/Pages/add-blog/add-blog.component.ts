@@ -18,7 +18,9 @@ export class AddBlogComponent implements OnInit {
       'content': new FormControl(null, [Validators.required, Validators.minLength(150)]),
       'description': new FormControl(null, [Validators.required, Validators.maxLength(100)]),
       'author': new FormControl(null, Validators.required),
+      // 'urlToImage': new FormControl(null, Validators.required),
       'publishedAt': new FormControl(null, Validators.required),
+
     });
   }
 
@@ -39,21 +41,7 @@ export class AddBlogComponent implements OnInit {
 
   }
   submit(data: any) {
-    if (this.editaction == -1) {
-      this.stringtoarr.push(data.value)
-      localStorage.setItem("data", JSON.stringify(this.stringtoarr));
-      alert("blogadded");
-    }
-    else {
-
-      this.stringtoarr[this.editaction].title = data.value.title;
-      console.log(this.stringtoarr[this.editaction].title);
-      localStorage.setItem("data", JSON.stringify(this.stringtoarr))
-      alert("Blog Edited Successfull");
-      this.route.navigateByUrl("bloglists")
-
-
-
-    }
+    this.localstorageser.submitBlogEdit(data, this.stringtoarr);
+    this.route.navigateByUrl("bloglists")
   }
 }

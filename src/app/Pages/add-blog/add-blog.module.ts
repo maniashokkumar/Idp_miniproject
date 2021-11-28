@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddBlogRoutingModule } from './add-blog-routing.module';
 import { AddBlogComponent } from './add-blog.component';
 
-
 @NgModule({
   declarations: [
     AddBlogComponent
@@ -13,7 +12,9 @@ import { AddBlogComponent } from './add-blog.component';
     CommonModule,
     AddBlogRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   
+
   ]
 })
 export class AddBlogModule { }

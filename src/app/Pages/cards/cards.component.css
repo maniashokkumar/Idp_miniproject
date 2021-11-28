@@ -1,13 +1,23 @@
 .articles{
     padding: 50px;
     padding-bottom: 0px;
+   text-align: center;
+  
 }
+
 .cards{
   border-radius: 20px;
-    margin-top: 10px;
+margin: auto;
    display: flex;
    gap: 10px;
    background-color: rgb(233, 231, 231);
+   width: 90%;
+   text-align: justify;
+   margin-bottom: 40px;
+  
+  
+
+   
 }
 .title{
     color: blue;
@@ -41,4 +51,15 @@
 a{
     color: blue;
     text-decoration: blue;
+}
+.author{
+ color: green;
+}
+.showmore{
+  float: right;
+ 
+}
+.cards:hover{
+   transform:scale(1.1);
+   transition-duration: 0.4s;
 }

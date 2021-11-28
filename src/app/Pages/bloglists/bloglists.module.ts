@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { BloglistsRoutingModule } from './bloglists-routing.module';
 import { BloglistsComponent } from './bloglists.component';
+import { CardsModule } from '../cards/cards.module';
+
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { BloglistsComponent } from './bloglists.component';
   ],
   imports: [
     CommonModule,
-    BloglistsRoutingModule
+    BloglistsRoutingModule,
+    CardsModule
+
   ]
 })
 export class BloglistsModule { }

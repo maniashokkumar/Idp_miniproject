@@ -60,14 +60,42 @@
                         <label>PublishedAt:</label>
                     </td>
                     <td>
-                        <input formControlName="publishedAt" type="datetime-local" class="form-control" readonly>
+                        <input formControlName="publishedAt" type="datetime" class="form-control" readonly>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- <div class="form-group">
+            <table>
+                <tr>
+                    <td>
+                        <label>Image:</label>
+                    </td>
+                    <td>
+                        <input formControlName="urlToImage" type="file" class="form-control" readonly>
+
+                    </td>
+                </tr>
+            </table>
+        </div> -->
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                        <button (click)="submit(blogForm)" type="submit">Submit</button>
+
                     </td>
                 </tr>
             </table>
         </div>
 
 
-        <button (click)="submit(blogForm)" type="submit">Submit</button>
+
+
     </form>
 
 </div>

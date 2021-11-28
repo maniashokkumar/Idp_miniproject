@@ -9,7 +9,13 @@ import { LocalstoragedataService } from 'src/app/Services/localstoragedata.servi
 })
 export class BloglistsComponent implements OnInit {
   all_Data: any;
-  constructor(private locastorser: LocalstoragedataService, private route: Router) { }
+  con: any
+  textlength: number = 150;
+  showMore: boolean;
+  constructor(private locastorser: LocalstoragedataService, private route: Router) {
+    this.showMore = false;
+    this.con = 4;
+  }
   ngOnInit(): void {
     const timer: any = setTimeout(() => {
 
